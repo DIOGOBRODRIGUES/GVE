@@ -3,6 +3,7 @@ package br.ufrpe.sistema_vendas_estoques.dados;
 
 import br.ufrpe.sistema_vendas_estoques.negocios.beans.Cliente;
 
+
 public class RepositorioClienteArray {
 	
 	private Cliente[] cliente;
@@ -29,13 +30,13 @@ public class RepositorioClienteArray {
 			}
 			
 		}
-		//so um teste
+		
 		Cliente resultado =null;
 		if(i!=this.proxima){
 			resultado=this.cliente[i];
 		}
 		return resultado;
-	
+	}
 		
 	}
 	
@@ -47,4 +48,5 @@ public class RepositorioClienteArray {
 		}*/
 	
 
-}
+
+
