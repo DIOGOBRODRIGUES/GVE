@@ -30,7 +30,7 @@ public class RepositorioClienteArray {
 			}
 			
 		}
-		
+		//so um teste
 		Cliente resultado =null;
 		if(i!=this.proxima){
 			resultado=this.cliente[i];
