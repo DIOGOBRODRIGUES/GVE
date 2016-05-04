@@ -1,5 +1,6 @@
 package br.ufrpe.sistema_vendas_estoques.dados;
 
+
 import br.ufrpe.sistema_vendas_estoques.negocios.beans.Cliente;
 
 public class RepositorioClienteArray {
