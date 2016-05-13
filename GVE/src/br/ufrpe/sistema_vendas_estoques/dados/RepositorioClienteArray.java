@@ -20,6 +20,30 @@ public class RepositorioClienteArray {
 	}
 	
 	public Cliente procurar(String cpf){
+		int i = this.procurarIndice(cpf);
+		Cliente resultado = null;
+		if(i!=this.proxima){
+			resultado=this.cliente[i];
+		}
+		return resultado;
+	}
+		
+	
+	
+	public void remover (String cpf){
+		int i = this.procurarIndice(cpf);
+		if(i!=this.proxima){
+			this.cliente[i]=this.cliente[this.proxima-1];
+			this.cliente[this.proxima-1]=null;
+			this.proxima=this.proxima-1;
+			System.out.println("Cliente"+cpf +"removida");
+		}else{
+			System.out.println("Cliente não existente");
+		}
+
+	}
+	
+	private int procurarIndice(String cpf){
 		int i =0;
 		boolean achou = false;
 		while((!achou)&&(i<this.proxima)){
@@ -28,24 +52,11 @@ public class RepositorioClienteArray {
 			}else{
 				i=i+1;
 			}
-			
 		}
-		//so um teste
-		Cliente resultado =null;
-		if(i!=this.proxima){
-			resultado=this.cliente[i];
-		}
-		return resultado;
+		return i;
 	}
-		
-	}
+}
 	
-	/*public void remover (String cpf){
-		int i = 0;
-		boolean achou= false;
-		while((!achou)&&(i<this.proxima)){
-			if(cpf.equals(this.cliente))
-		}*/
 	
 
 
