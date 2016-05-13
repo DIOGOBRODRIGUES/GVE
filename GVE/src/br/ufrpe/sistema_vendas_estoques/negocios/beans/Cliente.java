@@ -10,10 +10,18 @@ public class Cliente{
 	private String endereco;
 	private String email;
 	
-	public Cliente (){
+	public Cliente(int codigo, String nome, String cpf, String dataNascimento,String telefone, String endereco, String email) {
 		
-	}
+		this.codigo = codigo;
+		this.nome = nome;
+		this.cpf = cpf;
+		this.dataNascimento = dataNascimento;
+		this.telefone = telefone;
+		this.endereco = endereco;
+		this.email = email;
 	
+	}
+
 	public int getCodigo() {
 		return codigo;
 	}
@@ -23,6 +31,7 @@ public class Cliente{
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -56,5 +65,19 @@ public class Cliente{
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	@Override
+	public String toString() {
+		return "Cliente [codigo=" + codigo + ", nome=" + nome + ", cpf=" + cpf
+				+ ", dataNascimento=" + dataNascimento + ", telefone="
+				+ telefone + ", endereco=" + endereco + ", email=" + email
+				+ "]";
+	}
+	
+	public static void main(String[] args){
+		Cliente c1 = new Cliente("joao", "0123");
+		System.out.println(c1);
+	}
+
 	
 }
