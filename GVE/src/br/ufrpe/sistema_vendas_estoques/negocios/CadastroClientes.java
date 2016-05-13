@@ -7,6 +7,8 @@ public class CadastroClientes {
 
 	private RepositorioClienteArray repoC;
 	
+
+	
 	public void cadastro(Cliente c){
 		if(c == null){
 			System.out.println("Cliente inexistente!");

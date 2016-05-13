@@ -6,6 +6,12 @@ public class Produto {
 	private String categoria;
 	private double preco;
 	
+		public Produto(int codigo, String categoria, double preco) {
+		this.codigo = codigo;
+		this.categoria = categoria;
+		this.preco = preco;
+	}
+	
 	public int getCodigo() {
 		return codigo;
 	}
@@ -23,6 +29,10 @@ public class Produto {
 	}
 	public void setPreco(double preco) {
 		this.preco = preco;
+	}
+	@Override
+	public String toString() {
+		return "Produto [codigo=" + codigo + ", categoria=" + categoria + ", preco=" + preco + "]";
 	}
 	
 }
