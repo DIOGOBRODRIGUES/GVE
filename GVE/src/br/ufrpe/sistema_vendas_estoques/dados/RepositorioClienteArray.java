@@ -4,7 +4,7 @@ package br.ufrpe.sistema_vendas_estoques.dados;
 import br.ufrpe.sistema_vendas_estoques.negocios.beans.Cliente;
 
 
-public class RepositorioClienteArray {
+public class RepositorioClienteArray implements IRepositorioClienteArrey {
 	
 	private Cliente[] cliente;
 	private int proxima;
@@ -14,11 +14,19 @@ public class RepositorioClienteArray {
 		this.proxima=0;
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.ufrpe.sistema_vendas_estoques.dados.IRepositorioClienteArrey#cadastrar(br.ufrpe.sistema_vendas_estoques.negocios.beans.Cliente)
+	 */
+	@Override
 	public void cadastrar(Cliente c){
 		this.cliente[this.proxima]=c;
 		this.proxima=this.proxima+1;
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.ufrpe.sistema_vendas_estoques.dados.IRepositorioClienteArrey#procurar(java.lang.String)
+	 */
+	@Override
 	public Cliente procurar(String cpf){
 		int i = this.procurarIndice(cpf);
 		Cliente resultado = null;
@@ -30,6 +38,10 @@ public class RepositorioClienteArray {
 		
 	
 	
+	/* (non-Javadoc)
+	 * @see br.ufrpe.sistema_vendas_estoques.dados.IRepositorioClienteArrey#remover(java.lang.String)
+	 */
+	@Override
 	public void remover (String cpf){
 		int i = this.procurarIndice(cpf);
 		if(i!=this.proxima){
