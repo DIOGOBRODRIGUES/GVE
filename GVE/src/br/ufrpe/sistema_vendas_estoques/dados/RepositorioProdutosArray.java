@@ -2,7 +2,7 @@ package br.ufrpe.sistema_vendas_estoques.dados;
 
 import br.ufrpe.sistema_vendas_estoques.negocios.beans.Produto;
 
-public class RepositorioProdutosArray {
+public class RepositorioProdutosArray implements IRepositorioProdutosArray {
 	
 	private Produto[] produto;
 	private int proxima;
@@ -12,11 +12,19 @@ public class RepositorioProdutosArray {
 		this.proxima=0;
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.ufrpe.sistema_vendas_estoques.dados.IRepositorioProdutosArray#cadastrar(br.ufrpe.sistema_vendas_estoques.negocios.beans.Produto)
+	 */
+	@Override
 	public void cadastrar(Produto p){
 		this.produto[this.proxima]=p;
 		this.proxima=this.proxima+1;
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.ufrpe.sistema_vendas_estoques.dados.IRepositorioProdutosArray#procurar(int)
+	 */
+	@Override
 	public Produto procurar(int codigo){
 		int i = this.procurarIndice(codigo);
 		Produto resultado = null;
@@ -28,6 +36,10 @@ public class RepositorioProdutosArray {
 		
 	
 	
+	/* (non-Javadoc)
+	 * @see br.ufrpe.sistema_vendas_estoques.dados.IRepositorioProdutosArray#remover(int)
+	 */
+	@Override
 	public void remover (int codigo){
 		int i = this.procurarIndice(codigo);
 		if(i!=this.proxima){
