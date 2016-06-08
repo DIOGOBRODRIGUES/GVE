@@ -1,6 +1,7 @@
 package br.ufrpe.sistema_vendas_estoques.dados;
 
 
+import br.ufrpe.sistema_vendas_estoques.exceptions.ClienteInexistenteException;
 import br.ufrpe.sistema_vendas_estoques.negocios.beans.Cliente;
 
 
@@ -21,6 +22,7 @@ public class RepositorioClienteArray implements IRepositorioClienteArrey {
 	public void cadastrar(Cliente c){
 		this.cliente[this.proxima]=c;
 		this.proxima=this.proxima+1;
+		System.out.println("Cliente "+c+"cadastrado");
 	}
 	
 	/* (non-Javadoc)
@@ -42,7 +44,7 @@ public class RepositorioClienteArray implements IRepositorioClienteArrey {
 	 * @see br.ufrpe.sistema_vendas_estoques.dados.IRepositorioClienteArrey#remover(java.lang.String)
 	 */
 	@Override
-	public void remover (String cpf){
+	public void remover (String cpf)throws ClienteInexistenteException{
 		int i = this.procurarIndice(cpf);
 		if(i!=this.proxima){
 			this.cliente[i]=this.cliente[this.proxima-1];
@@ -50,10 +52,10 @@ public class RepositorioClienteArray implements IRepositorioClienteArrey {
 			this.proxima=this.proxima-1;
 			System.out.println("Cliente"+cpf +"removida");
 		}else{
-			System.out.println("Cliente não existente");
+			throw new ClienteInexistenteException(cpf);
 		}
 
-	}
+	} 
 	
 	private int procurarIndice(String cpf){
 		int i =0;

@@ -13,8 +13,8 @@ public class Principal {
 	
 	public static void main(String[] args){
 //		int menuOpcao;
-//		TelaTextual tt = new TelaTextual();
-//		tt.executar();
+		TelaTextual iniciar = new TelaTextual();
+		iniciar.executar();
 //		Scanner ler = new Scanner(System.in);
 //		menuOpcao=ler.nextInt();
 //		switch (menuOpcao) {
