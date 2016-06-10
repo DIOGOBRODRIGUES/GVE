@@ -16,7 +16,7 @@ public class CadastroClientes {
 		}
 	}
 	public void remover(String cpf){
-		this.repoC.remover(cpf);
+	//	this.repoC.remover(cpf);
 	}
 	
 	public Cliente procurar(String cpf){

@@ -1,4 +1,4 @@
-package br.ufrpe.sistema_vendas_estoque.gui;
+package br.ufrpe.sistema_vendas_estoques.gui;
 
 import java.util.Scanner;
 
